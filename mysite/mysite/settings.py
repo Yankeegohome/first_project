@@ -38,7 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
+    'ckeditor',
+    'ckeditor_uploader',
     'news.apps.NewsConfig',
+    'testapp.apps.TestappConfig',
+    'mptt',
+
 ]
 
 MIDDLEWARE = [
@@ -145,3 +150,21 @@ MEDIA_URL = '/media/'
 
 
 INTERNAL_IPS = ["127.0.0.1",]
+
+# EMAIL_HOST = 'smtp.yandex.ru'
+# EMAIL_PORT = '465' #2525
+# EMAIL_HOST_USER = 'mess-agess@yandex.ru'
+# EMAIL_HOST_PASSWORD = ''
+# EMAIL_USE_TLS = False
+# EMAIL_USE_SSL = True
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': os.path.join(BASE_DIR, 'django_cache'),
+    }
+}
+
+MPTT_ADMIN_LEVEL_INDENT = 20

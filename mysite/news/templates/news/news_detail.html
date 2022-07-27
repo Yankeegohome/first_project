@@ -19,7 +19,7 @@
                 <img src="https://sun9-west.userapi.com/sun9-38/s/v1/if1/axRC_dtL2U4NU3eJ6mj2v7Gj_oyPDOYsAPNYt2b1bWt-EKC5ZXqvptucx5fzEdzXtCY6RaqV.jpg?size=811x1080&quality=96&type=album" alt="" width="250" class="float-right mr-3">
                 {% endif %}
                 <h5 class="card-title">{{ news_item.title }}</h5>
-                <p class="card-text">{{ news_item.content|linebreaks }}</p>
+                <p class="card-text">{{ news_item.content|safe|linebreaks }}</p>
             </div>
           <div class="card-footer text-muted">
               {{ news_item.created_at|date:"Y-m-d H:i:s" }}
